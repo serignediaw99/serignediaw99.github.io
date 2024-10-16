@@ -68,7 +68,7 @@ export const projects = {
     //   techStack: ["Reactjs", "Bootstrap", "JavaScript", "Netlify"],
     // },
     // {
-    //   projectName: "Web Portfolio",
+    //   projectName: " Portfolio",
     //   image: "images/portfolio.png",
     //   summary:
     //     "Web Portfolio to showcase acadmics, skills, projects and contact details in better manner.",
