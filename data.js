@@ -23,12 +23,12 @@ export const skills = [
   //   color: "4",
   //   percentage: "70",
   // },
-  // {
-  //   title: "Version Control",
-  //   skillName: "GitHub",
-  //   color: "7",
-  //   percentage: "70",
-  // },
+  {
+    title: "Version Control",
+    skillName: "GitHub",
+    color: "7",
+    percentage: "70",
+  },
   // {
   //   title: "Tools",
   //   skillName: "Debugging, Chrome DevTools",

@@ -62,7 +62,7 @@ p {
 }
 x {
 	margin-bottom: 1.5em;
-	background-color: burlywood;
+	background-color: darkkhaki;
 	backface-visibility: visible;
 }
 
@@ -152,7 +152,8 @@ figure figcaption {
 		-o-transform: translateX(-300px);
 		transform: translateX(-300px);
 		padding-top: 4em;
-		background-color: #f9bf3f;
+		/* background-color: #f9bf3f; */
+		background-color: #C19A6B;
 		height: auto;
 	}
 	.resume-content img {
