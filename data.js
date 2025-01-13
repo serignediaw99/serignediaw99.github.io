@@ -9,7 +9,6 @@ export const skills = [
     title: "Languages",
     skillName: "Python, SQL",
     color: "1",
-    percentage: "80",
   },
   // {
   //   title: "Frameworks/Libraries",
@@ -27,7 +26,6 @@ export const skills = [
     title: "Version Control",
     skillName: "GitHub",
     color: "7",
-    percentage: "70",
   },
   // {
   //   title: "Tools",
