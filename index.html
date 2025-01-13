@@ -69,17 +69,22 @@
             </section>
             <!--------------------[END] About me---------------------------->
             <!--------------------[START] Skills---------------------------->
-            <section class="colorlib-skills" data-section="skills">
-               <div class="colorlib-narrow-content">
-                  <div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
-                     <div class="about-desc">
-                        <h1>Skills</h1>
+            <section class="skills-section" id="skills">
+               <div class="container">
+                 <div class="row">
+                   <div class="col-md-12">
+                     <h2 class="section-title">Skills</h2>
+                     <div class="skills-list">
+                       <ul>
+                         {skills[0].skillName.map((skill) => (
+                           <li>{skill}</li>
+                         ))}
+                       </ul>
                      </div>
-                  </div>
-                  <div id="skills" class="row">
-                  </div>
+                   </div>
+                 </div>
                </div>
-            </section>
+             </section>
             <!--------------------[END] Skills------------------------------>
             <section class="colorlib-profile" data-section="profile-card">
                <div class="colorlib-narrow-content">

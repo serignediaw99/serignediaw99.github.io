@@ -2252,3 +2252,34 @@ span {
     font-weight: 600;
 }
   
+.skills-section {
+	padding: 80px 0;
+	background: #f8f9fa;
+  }
+  
+  .section-title {
+	text-align: center;
+	margin-bottom: 40px;
+  }
+  
+  .skills-list ul {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 20px;
+	list-style: none;
+	padding: 0;
+  }
+  
+  .skills-list li {
+	background: #fff;
+	padding: 10px 20px;
+	border-radius: 25px;
+	box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+	transition: transform 0.2s;
+  }
+  
+  .skills-list li:hover {
+	transform: translateY(-3px);
+  }
+  
