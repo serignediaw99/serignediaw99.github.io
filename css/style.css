@@ -2252,34 +2252,18 @@ span {
     font-weight: 600;
 }
   
-.skills-section {
-	padding: 80px 0;
-	background: #f8f9fa;
-  }
-  
-  .section-title {
-	text-align: center;
-	margin-bottom: 40px;
-  }
-  
-  .skills-list ul {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	gap: 20px;
-	list-style: none;
-	padding: 0;
-  }
-  
-  .skills-list li {
+.skill-card {
 	background: #fff;
-	padding: 10px 20px;
-	border-radius: 25px;
+	padding: 1.5rem;
+	margin: 0.5rem;
+	text-align: center;
+	border-radius: 4px;
 	box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-	transition: transform 0.2s;
+	transition: all 0.3s ease;
   }
   
-  .skills-list li:hover {
-	transform: translateY(-3px);
+  .skill-card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   }
   
