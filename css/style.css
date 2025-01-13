@@ -2252,18 +2252,3 @@ span {
     font-weight: 600;
 }
   
-.skill-card {
-	background: #fff;
-	padding: 1.5rem;
-	margin: 0.5rem;
-	text-align: center;
-	border-radius: 4px;
-	box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-	transition: all 0.3s ease;
-  }
-  
-  .skill-card:hover {
-	transform: translateY(-5px);
-	box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  }
-  
