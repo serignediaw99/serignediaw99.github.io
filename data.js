@@ -6,8 +6,8 @@ export const bio = [
 
 export const skills = [
   {
-    title: "Languages",
-    skillName: "Python, SQL",
+    title: "Technical Skills",
+    skillName: "Python, SQL, Git, Pandas, Numpy, scikit-learn, A/B Testing, BERT",
     color: "1",
     percentage: "80",
   },
@@ -23,12 +23,6 @@ export const skills = [
   //   color: "4",
   //   percentage: "70",
   // },
-  {
-    title: "Version Control",
-    skillName: "GitHub",
-    color: "7",
-    percentage: "70",
-  },
   // {
   //   title: "Tools",
   //   skillName: "Debugging, Chrome DevTools",
