@@ -169,58 +169,30 @@ document.addEventListener('DOMContentLoaded', renderProjects);
   function populateBlogs(items, id) {
     const projectdesign = document.getElementById(id);
     const count = 3;
+         function renderProjects() {
+    const projectsContainer = document.getElementById('projects-container');
   
-    for (let i = 0; i < count; i++) {
-      const h4 = document.createElement("h4");
-      h4.className = "project-heading";
-      h4.innerHTML = items[i].title;
-  
-      const a = document.createElement("a");
-      a.href = items[i].link;
-      a.target = "_blank";
-      a.append(h4);
+    projects.forEach(project => {
+      const projectHTML = `
+        <div class="col-md-4 animate-box">
+          <div class="project-entry">
+            <a href="${project.preview}" class="project-img" style="background-image: url(${project.image});">
+              <div class="desc">
+                <h3>${project.projectName}</h3>
+                <span>${project.summary}</span>
+                <div class="tech-stack">
+                  ${project.techStack.map(tech => `<span class="tech-tag">${tech}</span>`).join(' ')}
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      `;
+      projectsContainer.innerHTML += projectHTML;
+    });
+}
 
-      const pubDateEle = document.createElement('p');
-      pubDateEle.className = 'publish-date';
-      pubDateEle.innerHTML = getBlogDate(items[i].pubDate);
-      a.append(pubDateEle);
-  
-      const divResumeContentRight = document.createElement("div");
-      divResumeContentRight.className = "resume-content";
-      divResumeContentRight.id = "right-div";
-  
-      const p = document.createElement("p");
-      p.className = "project-description";
-      const html = items[i].content;
-      const [, doc] = /<p>(.*?)<\/p>/g.exec(html) || [];
-      p.innerHTML = doc;
-  
-      const divSpan = document.createElement("div");
-      for (const category of items[i].categories) {
-        const span = document.createElement("span");
-        span.className = "badge badge-secondary";
-        span.innerHTML = category;
-        divSpan.append(span);
-      }
-  
-      const divSubHeading = document.createElement("div");
-      divSubHeading.className = "sub-heading";
-      divSubHeading.append(p, divSpan);
-      divResumeContentRight.append(divSubHeading);
-  
-      const divResumeItem = document.createElement("div");
-      divResumeItem.className = "resume-item";
-      divResumeItem.append(divResumeContentRight);
-      a.append(divResumeItem);
-  
-      const divProjectCard = document.createElement("div");
-      divProjectCard.className = "project-card";
-      divProjectCard.append(a);
-  
-      const li = document.createElement("li");
-      li.append(divProjectCard);
-      projectdesign.append(li);
-  
+document.addEventListener('DOMContentLoaded', renderProjects);
       if (i !== count - 1) {
         projectdesign.append(document.createElement("hr"));
       }
