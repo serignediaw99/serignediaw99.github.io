@@ -5,46 +5,7 @@ export const bio = [
 ];
 
 export const skills = [
-  {
-    title: "Languages",
-    skillName: "Python, SQL",
-    color: "1",
-  },
-  // {
-  //   title: "Frameworks/Libraries",
-  //   skillName: "Angular, RxJS, NGRX/NGXS",
-  //   color: "6",
-  //   percentage: "70",
-  // },
-  // {
-  //   title: "Design",
-  //   skillName: "HTML, Bootstrap, Tailwind",
-  //   color: "4",
-  //   percentage: "70",
-  // },
-  {
-    title: "Version Control",
-    skillName: "GitHub",
-    color: "7",
-  },
-  // {
-  //   title: "Tools",
-  //   skillName: "Debugging, Chrome DevTools",
-  //   color: "3",
-  //   percentage: "80",
-  // },
-//   {
-//     title: "Analytics",
-//     skillName: "CleverTap, Countly",
-//     color: "5",
-//     percentage: "50",
-//   },
-//   {
-//     title: "IDE",
-//     skillName: "VS Code",
-//     color: "6",
-//     percentage: "70",
-//   },
+  "Python, SQL, Git, scikit-learn, bash, PySpark"
 ];
 
 export const projects = {

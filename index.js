@@ -112,16 +112,18 @@ import { URLs } from './user-data/urls.js';
   
   function populateSkills(items, id) {
     const skillsTag = document.getElementById(id);
-    items.forEach(({ skillName, color }) => {
-      const h3 = getElement("h3", null);
-      h3.innerHTML = skillName;
-  
-      const divAnimateBox = getElement("div", "col-md-6 animate-box");
-      divAnimateBox.append(h3);
-  
-      skillsTag.append(divAnimateBox);
+    items.forEach((skill) => {
+        const h3 = getElement("h3", null);
+        h3.innerHTML = skill;
+        h3.style.fontFamily = "Courier New, Courier, monospace"; // Add your preferred font
+        h3.style.fontSize = "18px"; // Optional: adjust size
+        
+        const divAnimateBox = getElement("div", "col-md-6 animate-box");
+        divAnimateBox.append(h3);
+
+        skillsTag.append(divAnimateBox);
     });
-  }
+}
   
   /**
    * Populates projects to the HTML page.
