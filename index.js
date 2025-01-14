@@ -132,34 +132,30 @@ import { URLs } from './user-data/urls.js';
    * @param {string} id - The id of the HTML element to which projects will be appended.
    *
    * @returns {void}
-   */
-function displayProjects() {
-  const container = document.getElementById('projects-container');
-  const template = document.getElementById('project-template');
+import { projects } from "./data.js";
 
+function renderProjects() {
+  const projectsContainer = document.getElementById('portfolio-section');
+  
   projects.forEach(project => {
-    const projectElement = template.content.cloneNode(true);
-    
-    projectElement.querySelector('.project-image').src = project.image;
-    projectElement.querySelector('.project-name').textContent = project.projectName;
-    projectElement.querySelector('.project-summary').textContent = project.summary;
-    projectElement.querySelector('.preview-link').href = project.preview;
-    
-    const techStackDiv = projectElement.querySelector('.tech-stack');
-    project.techStack.forEach(tech => {
-      const techSpan = document.createElement('span');
-      techSpan.className = 'tech-tag';
-      techSpan.textContent = tech;
-      techStackDiv.appendChild(techSpan);
-    });
-    
-    container.appendChild(projectElement);
+    const projectCard = `
+      <div class="col-md-4 animate-box">
+        <div class="project-card">
+          <img src="${project.image}" alt="${project.projectName}" class="img-responsive">
+          <h3>${project.projectName}</h3>
+          <p>${project.summary}</p>
+          <div class="tech-stack">
+            ${project.techStack.map(tech => `<span class="tech-badge">${tech}</span>`).join('')}
+          </div>
+          <a href="${project.preview}" target="_blank" class="btn btn-primary">View Project</a>
+        </div>
+      </div>
+    `;
+    projectsContainer.innerHTML += projectCard;
   });
 }
 
-// Call this function when the document loads
-document.addEventListener('DOMContentLoaded', displayProjects);
-  /**
+document.addEventListener('DOMContentLoaded', renderProjects);
    * Creates and populates a list of blog posts with specified properties
    *
    * @function
