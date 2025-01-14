@@ -8,9 +8,7 @@ import {
   } from "./data.js";
 
 import { URLs } from './user-data/urls.js';
-  
-  const { MLProjects } =
-    projects;
+
   const { medium, gitConnected } = URLs;
   
   /**
@@ -135,78 +133,32 @@ import { URLs } from './user-data/urls.js';
    *
    * @returns {void}
    */
-  
-  function populateProjects(items, id) {
-    let projectdesign = document.getElementById(id);
-  
-    let h4 = document.createElement("h4");
-    h4.className = "project-heading";
-  
-    let a = document.createElement("a");
-    a.target = "_blank";
-  
-    let img = document.createElement("img");
-    img.className = "img-fluid";
-  
-    let divResumeContentLeft = document.createElement("div");
-    divResumeContentLeft.className = "resume-content";
-    divResumeContentLeft.id = "left-div";
-    divResumeContentLeft.append(img);
-  
-    let divResumeContentRight = document.createElement("div");
-    divResumeContentRight.className = "resume-content";
-    divResumeContentRight.id = "right-div";
-  
-    let p = document.createElement("p");
-    p.className = "project-description";
-  
-    let divSpan = document.createElement("div");
-  
-    let divSubHeading = document.createElement("div");
-    divSubHeading.className = "sub-heading";
-    divSubHeading.append(p);
-    divSubHeading.append(divSpan);
-    divResumeContentRight.append(divSubHeading);
-  
-    let divResumeItem = document.createElement("div");
-    divResumeItem.className = "resume-item";
-    divResumeItem.append(divResumeContentLeft);
-    divResumeItem.append(divResumeContentRight);
-    a.append(divResumeItem);
-  
-    let divProjectCard = document.createElement("div");
-    divProjectCard.className = "project-card";
-    divProjectCard.append(a);
-  
-    let li = document.createElement("li");
-    li.append(divProjectCard);
-  
-    let hr = document.createElement("hr");
-  
-    for (let i = 0; i < items.length; i++) {
-      h4.innerHTML = items[i].projectName;
-      a.href = items[i].preview;
-  
-      img.src = items[i].image;
-  
-      p.innerHTML = items[i].summary;
-  
-      divSpan.innerHTML = "";
-      for (let k = 0; k < items[i].techStack.length; k++) {
-        let span = document.createElement("span");
-        span.className = "badge badge-secondary";
-        span.innerHTML = items[i].techStack[k];
-        divSpan.append(span);
-      }
-  
-      projectdesign.append(li.cloneNode(true));
-  
-      if (i != items.length - 1) {
-        projectdesign.append(hr.cloneNode(true));
-      }
-    }
-  }
-  
+function displayProjects() {
+  const container = document.getElementById('projects-container');
+  const template = document.getElementById('project-template');
+
+  projects.forEach(project => {
+    const projectElement = template.content.cloneNode(true);
+    
+    projectElement.querySelector('.project-image').src = project.image;
+    projectElement.querySelector('.project-name').textContent = project.projectName;
+    projectElement.querySelector('.project-summary').textContent = project.summary;
+    projectElement.querySelector('.preview-link').href = project.preview;
+    
+    const techStackDiv = projectElement.querySelector('.tech-stack');
+    project.techStack.forEach(tech => {
+      const techSpan = document.createElement('span');
+      techSpan.className = 'tech-tag';
+      techSpan.textContent = tech;
+      techStackDiv.appendChild(techSpan);
+    });
+    
+    container.appendChild(projectElement);
+  });
+}
+
+// Call this function when the document loads
+document.addEventListener('DOMContentLoaded', displayProjects);
   /**
    * Creates and populates a list of blog posts with specified properties
    *
