@@ -116,9 +116,9 @@ import { URLs } from './user-data/urls.js';
         const h3 = getElement("h3", null);
         h3.innerHTML = skill;
         h3.style.fontFamily = "Courier New, Courier, monospace"; // Add your preferred font
-        h3.style.fontSize = "18px"; // Optional: adjust size
+        h3.style.fontSize = "24px"; // Optional: adjust size
         
-        const divAnimateBox = getElement("div", "col-md-6 animate-box");
+        const divAnimateBox = getElement("div", "col-md-12 animate-box");
         divAnimateBox.append(h3);
 
         skillsTag.append(divAnimateBox);
