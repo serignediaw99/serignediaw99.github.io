@@ -55,6 +55,13 @@ window.addEventListener("DOMContentLoaded", async function () {
     // });
 
     document.querySelectorAll(".github-card").forEach(async function (el) {
+
+        el.style.display = "flex";
+        el.style.justifyContent = "center";
+        el.style.alignItems = "center";
+        el.style.margin = "0 auto";
+        el.style.maxWidth = "800px";
+
         const username = el.getAttribute("username");
 
         const response = await get(`https://api.github.com/users/${username}`);
